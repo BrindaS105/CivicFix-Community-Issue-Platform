@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CivicFix | Community Issue Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="brand">
+        <h1>CivicFix</h1>
+        <p>Better communities start with reported problems.</p>
+    </div>
+    <span class="prototype-label">Community Portal Prototype</span>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <div>
+            <p class="eyebrow">COMMUNITY ISSUE MANAGEMENT</p>
+            <h2>Report an issue. Track its progress.</h2>
+            <p>Help make your community better by reporting local issues
+               and following their progress.</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <article class="stat-card">
+            <span>Total Reports</span>
+            <strong id="totalReports">0</strong>
+        </article>
+
+        <article class="stat-card">
+            <span>Reported</span>
+            <strong id="reportedCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+            <span>In Progress</span>
+            <strong id="progressCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+            <span>Resolved</span>
+            <strong id="resolvedCount">0</strong>
+        </article>
+    </section>
+
+    <section class="panel">
+        <h2>Report a Community Issue</h2>
+        <p class="section-description">
+            Provide the details below to create a sample issue report.
+        </p>
+
+        <form id="issueForm">
+            <div class="form-grid">
+                <div class="field">
+                    <label for="issueTitle">Issue Title</label>
+                    <input id="issueTitle" type="text"
+                        placeholder="Example: Damaged road near park"
+                        maxlength="80" required>
+                </div>
+
+                <div class="field">
+                    <label for="category">Issue Category</label>
+                    <select id="category" required>
+                        <option value="">Select category</option>
+                        <option value="Road Damage">Road Damage</option>
+                        <option value="Garbage">Garbage</option>
+                        <option value="Streetlight">Streetlight</option>
+                        <option value="Water Leakage">Water Leakage</option>
+                        <option value="Drainage">Drainage</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="location">Location</label>
+                    <input id="location" type="text"
+                        placeholder="Enter locality or landmark"
+                        maxlength="100" required>
+                </div>
+
+                <div class="field">
+                    <label for="reporter">Reporter Name</label>
+                    <input id="reporter" type="text"
+                        placeholder="Enter your name"
+                        maxlength="60" required>
+                </div>
+
+                <div class="field full-width">
+                    <label for="description">Issue Description</label>
+                    <textarea id="description" rows="4"
+                        maxlength="500"
+                        placeholder="Describe the issue..."
+                        required></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="primary-button">
+                Submit Report
+            </button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <div class="section-heading">
+            <div>
+                <h2>Community Reports</h2>
+                <p class="section-description">
+                    Review and track submitted sample reports.
+                </p>
+            </div>
+        </div>
+
+        <div class="filters">
+            <input type="search" id="searchInput"
+                placeholder="Search by title or location...">
+
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Road Damage">Road Damage</option>
+                <option value="Garbage">Garbage</option>
+                <option value="Streetlight">Streetlight</option>
+                <option value="Water Leakage">Water Leakage</option>
+                <option value="Drainage">Drainage</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Reported">Reported</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Resolved">Resolved</option>
+            </select>
+        </div>
+
+        <div id="issueList" class="issue-list"></div>
+
+        <p id="emptyMessage" class="empty-message">
+            No reports found. Submit your first community issue.
+        </p>
+    </section>
+
+    <section class="panel">
+        <h2>Product Insights</h2>
+        <p class="section-description">
+            A simple overview of the issues recorded in this prototype.
+        </p>
+
+        <div id="categorySummary" class="category-summary"></div>
+
+        <div class="resolution-section">
+            <div class="resolution-heading">
+                <span>Resolution Rate</span>
+                <strong id="resolutionRate">0%</strong>
+            </div>
+            <div class="progress-track">
+                <div id="resolutionBar"></div>
+            </div>
+        </div>
+    </section>
+
+    <p class="notice">
+        Demo notice: Reports are stored in this browser only.
+        They are not submitted to a government department.
+    </p>
+
+</main>
+
+<footer>
+    <p>CivicFix | Community Issue Reporting Prototype</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
